@@ -1,0 +1,20 @@
+{
+  "name": "task_manager",
+  "description": "Tasks_Manager =============",
+  "main": "index.js",
+  "authors": [
+    "Rokas Stašys <rokassta@outlook.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rokst/Task-Manager",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

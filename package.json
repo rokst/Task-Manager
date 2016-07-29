@@ -10,5 +10,21 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1"
-  }
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-if": "^2.0.1",
+    "gulp-uglify": "^1.5.4",
+    "gulp-uglifycss": "^1.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rokst/Task-Manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rokst/Task-Manager/issues"
+  },
+  "homepage": "https://github.com/rokst/Task-Manager#readme"
 }
