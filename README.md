@@ -26,5 +26,17 @@ $ cd Task-Manager/
 $ php app/console server:run
 ```
 This command will start a web application which you can access at http://localhost:8000/. In order to stop web server press ```Ctrl + C``` in your terminal window.
+
+Set your specified user as an admin:
+```
+$ php app/console fos:user:promote
+
+Please choose a username: 
+$ [your user name]
+
+Please choose a role: 
+$ ROLE_ADMIN
+```
+
 - - - - - - -  
 ###### &copy; 2016 [Rokas Stašys](https://github.com/rokst)
