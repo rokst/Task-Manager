@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+{% block head %}
+    <meta charset="UTF-8" />
+    <title>{% block title %}Tasks Manager{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}"/>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Task Manager</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/list">Your Tasks</a></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                   aria-expanded="false">Admin <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/listall">List All Tasks</a></li>
+                                    <li><a href="/create">Create New Task</a></li>
+                                </ul>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/logout">Logout <span class="sr-only">Logout</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+{% endblock %}
+
+<div class="container">
+    {% for flash_message in app.session.flashbag.get('notice') %}
+        <div class = "alert alert-success"> {{ flash_message }} </div>
+    {% endfor %}
+</div>
+
+{% block body %}
+
+{% endblock %}
+
+{% block footer %}
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <center><font color=white>© {{ 'now'|date('Y') }} All Rights Reserved</font></center>
+        </nav>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/javascript.js') }}"></script>
+{% endblock %}
+
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>User ID</th>
+                        <th>Task's status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%  for task in tasks %}
+                        <tr>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.userId }}</td>
+                            <td>
+                                {% if task.status %}
+                                    Completed
+                                {% else %}
+                                    Still in progress
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="/edit/{{ task.id }}" class="btn btn-primary">Edit</a>
+                                <a href="/delete/{{ task.id }}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

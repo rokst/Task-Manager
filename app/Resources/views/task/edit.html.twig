@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="col-sm-4">
+            <div class="jumbotron">
+                <h4>Edit a task</h4>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <h4>The list of users</h4>
+            <div class="col-sm-6">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Id</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {%  for user in users %}
+                            <tr>
+                                <td>{{ user.username }}</td>
+                                <td>{{ user.id }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

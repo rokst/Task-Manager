@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Task's status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {%  for task in tasks %}
+                    <tr>
+                        <td>{{ task.title }}</td>
+                        <td>
+                            {% if task.status %}
+                                Completed
+                            {% else %}
+                                Still in progress
+                            {% endif %}
+                        </td>
+                        {% if task.status == 0 %}
+                            <td>
+                                <a href="/done/{{ task.id }}" class="btn btn-primary">Completed</a>
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
